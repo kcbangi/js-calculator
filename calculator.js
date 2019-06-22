@@ -10,6 +10,7 @@
      let total = 0;
      let memory = 0;
 
+
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
@@ -20,7 +21,9 @@
         if(typeof x === 'number') {
             total = x;
             return total;
-        } 
+        } else {
+            return error;
+        }
     };
  
   /**
@@ -41,6 +44,8 @@
         if(typeof x === 'number') {
             total += x;
             return total;
+        } else {
+            return error;
         }
    };
 
@@ -52,6 +57,8 @@
        if(typeof x === 'number') {
             total -= x;
             return total;
+       } else {
+           return error;
        }
    };
 
@@ -63,6 +70,8 @@
         if(typeof x === 'number') {
             total *= x;
             return total;
+        } else {
+            return error
         }
    };
 
@@ -75,6 +84,8 @@
        if(typeof x === 'number') {
            total /= x;
            return total;
+       } else {
+           return error;
        }
    };
 
@@ -92,9 +103,9 @@
    * Stores the value of `total` to `memory`
    */
 
+ 
    function saveMemory() {
-       total = memory;
-
+       memory = total;
    };
 
   /**
@@ -102,12 +113,21 @@
    */
 
    function clearMemory() {
-
+        memory = 0;
    };
+
   /**
+   * 
    * Validation
    */
 
+   function Validations(x) {
+        if(typeof x === 'number') {
+            return x;
+        } else {
+            return error;
+        }
+   };
   return {
         load: load,
         getTotal: getTotal,
@@ -117,7 +137,7 @@
         divide: divide,
         recallMemory: recallMemory,
         saveMemory: saveMemory,
-        clearMemory: clearMemory
+        clearMemory: clearMemory,
+        Validations: Validations
     };
-};
-
+ };
