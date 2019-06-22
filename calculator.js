@@ -7,8 +7,8 @@
  */
 
  function calculatorModule() {
-     var total = 0;
-     var memory = 0;
+     let total = 0;
+     let memory = 0;
 
   /**
    * sets the `total` to the number passed in
@@ -16,7 +16,7 @@
    * @return { Number }    current total
    */
 
-    var load = function(x) {
+    function load(x) {
         if(typeof x === 'number') {
             total = x;
             return total;
@@ -28,7 +28,7 @@
    * @return { Number }
    */
 
-    var getTotal = function() {
+    function getTotal() {
         return total;
     };
 
@@ -37,7 +37,7 @@
    * @param { Number } x
    */
 
-   var add = function(x) {
+   function add(x) {
         if(typeof x === 'number') {
             total += x;
             return total;
@@ -48,7 +48,7 @@
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
-   var subtract = function(x) {
+   function subtract(x) {
        if(typeof x === 'number') {
             total -= x;
             return total;
@@ -59,7 +59,7 @@
    * Multiplies the value by `total`
    * @param  { Number } x
    */
-   var multiply = function(x) {
+   function multiply(x) {
         if(typeof x === 'number') {
             total *= x;
             return total;
@@ -71,7 +71,7 @@
    * @param  { Number } x
    */
 
-   var divide = function(x) {
+   function divide(x) {
        if(typeof x === 'number') {
            total /= x;
            return total;
@@ -83,7 +83,7 @@
    * @return { Number }
    */
 
-   var recallMemory = function(x) {
+   function recallMemory(x) {
         x = memory;
         return x;
    };
@@ -92,9 +92,9 @@
    * Stores the value of `total` to `memory`
    */
 
-   var saveMemory = function() {
+   function saveMemory() {
+       total = memory;
 
-        total = memory;
    };
 
   /**
