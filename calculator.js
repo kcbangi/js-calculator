@@ -10,7 +10,6 @@
      let total = 0;
      let memory = 0;
 
-
   /**
    * sets the `total` to the number passed in
    * @param  { Number } x
